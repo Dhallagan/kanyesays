@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sounds View Controller-->
+        <!--Sound View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SoundsViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SoundViewController" customModule="SoundBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,25 +22,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="kanye" translatesAutoresizingMaskIntoConstraints="NO" id="CWr-nv-7Nw">
-                                <rect key="frame" x="103" y="236" width="232" height="344"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="232" id="6yt-69-LuH"/>
-                                    <constraint firstAttribute="height" constant="344" id="L14-EC-3e2"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kayne Says-white" translatesAutoresizingMaskIntoConstraints="NO" id="8kq-mo-uBJ">
-                                <rect key="frame" x="127.66666666666669" y="12" width="159" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="dWp-CR-e1B"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AwK-mt-E0P">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AwK-mt-E0P">
                                 <rect key="frame" x="61" y="127" width="58" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Allday">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="playAllDay:" destination="BYZ-38-t0r" eventType="touchDown" id="ETf-0e-wS7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nw-Yi-oQV">
                                 <rect key="frame" x="239" y="169" width="113" height="39"/>
@@ -48,6 +38,9 @@
                                 <state key="normal" title="Stop Talkin'">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="playStopTalking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DSx-rW-ALc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wa8-5X-yz7">
                                 <rect key="frame" x="61" y="627" width="102" height="42"/>
@@ -55,20 +48,63 @@
                                 <state key="normal" title="Jibberish">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="playJibberish:" destination="BYZ-38-t0r" eventType="touchDown" id="gVT-x4-KLl"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ed-cy-ckd">
-                                <rect key="frame" x="20" y="323" width="143" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="That's Humble">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kanye" translatesAutoresizingMaskIntoConstraints="NO" id="CWr-nv-7Nw">
+                                <rect key="frame" x="91" y="196" width="232" height="344"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="232" id="6yt-69-LuH"/>
+                                    <constraint firstAttribute="height" constant="344" id="L14-EC-3e2"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bw1-VH-T9Z">
                                 <rect key="frame" x="119" y="437" width="152" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="That Was Good">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="playThatWasGood:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r8K-bO-Per"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ed-cy-ckd">
+                                <rect key="frame" x="20" y="323" width="143" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="That's Humble">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playThatsHumble:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iTM-S2-nKg"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kayne Says-white" translatesAutoresizingMaskIntoConstraints="NO" id="8kq-mo-uBJ">
+                                <rect key="frame" x="127.66666666666669" y="12" width="159" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="dWp-CR-e1B"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99w-vb-lI3">
+                                <rect key="frame" x="282" y="566" width="84" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="DJ Horn">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAirhorn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QN9-vy-j9F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR4-fD-C7Y">
+                                <rect key="frame" x="347" y="327" width="30" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Yo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playYo:" destination="BYZ-38-t0r" eventType="touchDown" id="EWu-bc-y1A"/>
+                                    <action selector="playYo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tbP-gX-HTc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,15 +112,26 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9Nw-Yi-oQV" secondAttribute="trailing" constant="42" id="4dT-ok-yql"/>
                             <constraint firstItem="1ed-cy-ckd" firstAttribute="top" secondItem="AwK-mt-E0P" secondAttribute="bottom" constant="158" id="5rn-vN-QJY"/>
                             <constraint firstItem="Bw1-VH-T9Z" firstAttribute="top" secondItem="9Nw-Yi-oQV" secondAttribute="bottom" constant="229" id="AaL-yi-4m1"/>
+                            <constraint firstItem="AwK-mt-E0P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="41" id="Ecr-rt-ASj"/>
+                            <constraint firstItem="CWr-nv-7Nw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Eqr-wJ-2rm"/>
                             <constraint firstItem="1ed-cy-ckd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GkN-e3-hyu"/>
+                            <constraint firstItem="lR4-fD-C7Y" firstAttribute="top" secondItem="9Nw-Yi-oQV" secondAttribute="bottom" constant="119" id="IyX-oa-4Yz"/>
+                            <constraint firstItem="AwK-mt-E0P" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="107" id="KO0-ZG-g95"/>
+                            <constraint firstItem="CWr-nv-7Nw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OE0-Ws-7Cz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wa8-5X-yz7" secondAttribute="bottom" constant="67" id="Tx3-d3-TYU"/>
                             <constraint firstItem="9Nw-Yi-oQV" firstAttribute="top" secondItem="8kq-mo-uBJ" secondAttribute="bottom" constant="57" id="Vx5-Dc-XTZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="99w-vb-lI3" secondAttribute="trailing" constant="28" id="fSF-kN-gFl"/>
                             <constraint firstItem="8kq-mo-uBJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gFX-cr-7vz"/>
                             <constraint firstItem="8kq-mo-uBJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="12" id="mee-1D-z9Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Bw1-VH-T9Z" secondAttribute="trailing" constant="123" id="pPh-n4-yVY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="99w-vb-lI3" secondAttribute="bottom" constant="130" id="qou-wI-5gb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lR4-fD-C7Y" secondAttribute="trailing" constant="17" id="x82-oH-72I"/>
                             <constraint firstItem="Wa8-5X-yz7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="41" id="yqK-Gb-kAf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="allday" destination="AwK-mt-E0P" id="0Ee-1M-DH2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
